@@ -1,0 +1,204 @@
+<!DOCTYPE html>
+<html lang="id">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Tafsir Moderasi Surat Al-Kafirun</title>
+    <style>
+      * {
+        margin: 0;
+        padding: 0;
+        box-sizing: border-box;
+        font-family: "Poppins", sans-serif;
+      }
+
+      body {
+        background: linear-gradient(120deg, #2c3750, #34db5e);
+        color: white;
+        overflow-x: hidden;
+      }
+
+      header {
+        text-align: center;
+        padding: 70px 20px;
+        animation: fadeIn 2s ease;
+      }
+
+      header h1 {
+        font-size: 2.5rem;
+        letter-spacing: 1px;
+      }
+
+      header p {
+        margin-top: 10px;
+        font-size: 1.1rem;
+        opacity: 0.8;
+      }
+
+      section {
+        max-width: 900px;
+        margin: 40px auto;
+        background: rgba(255, 255, 255, 0.1);
+        border-radius: 20px;
+        padding: 30px;
+        backdrop-filter: blur(6px);
+        box-shadow: 0 4px 20px rgba(0, 0, 0, 0.3);
+        animation: slideUp 1s ease;
+        transition: transform 0.3s ease;
+      }
+
+      section:hover {
+        transform: translateY(-5px);
+      }
+
+      h2 {
+        font-size: 1.8rem;
+        color: #f1c40f;
+        margin-bottom: 10px;
+      }
+
+      p {
+        font-size: 1rem;
+        line-height: 1.7;
+        margin-bottom: 20px;
+        text-align: justify;
+      }
+
+      footer {
+        text-align: center;
+        padding: 20px;
+        font-size: 0.9rem;
+        opacity: 0.7;
+      }
+
+      .btn {
+        display: inline-block;
+        background: #f1c40f;
+        color: #2c3e50;
+        padding: 10px 20px;
+        border-radius: 10px;
+        text-decoration: none;
+        font-weight: bold;
+        transition: 0.3s ease;
+        cursor: pointer;
+        margin: 5px;
+      }
+
+      .btn:hover {
+        background: #fff;
+        transform: scale(1.05);
+      }
+
+      @keyframes fadeIn {
+        from {
+          opacity: 0;
+          transform: translateY(-20px);
+        }
+        to {
+          opacity: 1;
+          transform: translateY(0);
+        }
+      }
+
+      @keyframes slideUp {
+        from {
+          opacity: 0;
+          transform: translateY(50px);
+        }
+        to {
+          opacity: 1;
+          transform: translateY(0);
+        }
+      }
+
+      #tafsir-box {
+        display: none;
+        background: rgba(255, 255, 255, 0.2);
+        border-radius: 10px;
+        padding: 20px;
+        margin-top: 20px;
+        animation: fadeIn 0.5s ease;
+      }
+    </style>
+  </head>
+  <body>
+    <header>
+      <h1>Surat Al-Kafirun</h1>
+      <p style="text-align: center">
+        Menemukan makna toleransi dan ketegasan iman dalam Islam
+      </p>
+    </header>
+
+    <section>
+      <h2>🌙 Latar Belakang</h2>
+      <p>
+        Surat Al-Kafirun (QS. 109) diturunkan di Mekkah saat Nabi Muhammad ﷺ
+        menghadapi penolakan dari kaum Quraisy. Surat ini menegaskan bahwa Islam
+        menghormati perbedaan keyakinan, namun tidak mencampuradukkan akidah.
+      </p>
+
+      <h2>📖 Pesan Utama</h2>
+      <p>
+        “Untukmu agamamu, dan untukku agamaku.” (QS. Al-Kafirun: 6) Ayat ini
+        sering ditafsirkan sebagai pesan <b>toleransi beragama</b>. Namun,
+        sebagian ulama juga menekankan <b>ketegasan iman</b> agar tidak ikut dalam
+        praktik kepercayaan lain.
+      </p>
+
+      <h2>🎧 Dengarkan Lantunan Surat Al-Kafirun</h2>
+      <button class="btn" onclick="toggleAudio()">
+        Putar / Hentikan Lantunan
+      </button>
+      <audio id="audio" src="alkafirun.mp3.mp3"></audio>
+
+      <h2>🕋 Tafsir Ulama</h2>
+      <button class="btn" onclick="toggleTafsir()">
+        Tampilkan / Sembunyikan Tafsir
+      </button>
+      <div id="tafsir-box">
+        <p>
+          <strong>Quraish Shihab (Tafsir Al-Misbah):</strong> Surat ini bukan
+          ajakan permusuhan, tapi penegasan batas keyakinan dengan cara damai.
+        </p>
+        <p>
+          <strong>Ibn Katsir:</strong> Allah memerintahkan Nabi untuk tidak
+          mengikuti cara ibadah kaum kafir, namun tetap menunjukkan akhlak baik.
+        </p>
+        <p>
+          <strong>Kemenag RI:</strong> Surat ini menunjukkan sikap moderat:
+          menghormati perbedaan, tanpa kehilangan prinsip iman.
+        </p>
+      </div>
+
+      <h2>⚖️ Nilai Moderasi</h2>
+      <p>
+        Islam mengajarkan keseimbangan: beriman dengan teguh, namun tetap
+        menghormati orang lain. Perbedaan tafsir menunjukkan bahwa Islam adalah
+        agama yang terbuka terhadap diskusi dan pemahaman yang beragam.
+      </p>
+    </section>
+
+    <footer>
+      <p style="text-align: center;">© 2025 - Website PjBL Surat Al-Kafirun | Dibuat oleh Fandi Eka Pratama</p>
+    </footer>
+
+    <script>
+      const audio = document.getElementById("audio");
+      function toggleAudio() {
+        if (audio.paused) {
+          audio.play();
+        } else {
+          audio.pause();
+        }
+      }
+
+      function toggleTafsir() {
+        const box = document.getElementById("tafsir-box");
+        box.style.display =
+          box.style.display === "none" || box.style.display === ""
+            ? "block"
+            : "none";
+      }
+    </script>
+  </body>
+</html>
