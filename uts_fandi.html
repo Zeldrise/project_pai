@@ -1,204 +1,386 @@
 <!DOCTYPE html>
 <html lang="id">
-  <head>
-    <meta charset="UTF-8" />
-    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>Tafsir Moderasi Surat Al-Kafirun</title>
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Kajian Moderasi Al-Kafirun | Fandi Eka Pratama</title>
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;600;700&family=Amiri&display=swap" rel="stylesheet">
     <style>
-      * {
-        margin: 0;
-        padding: 0;
-        box-sizing: border-box;
-        font-family: "Poppins", sans-serif;
-      }
-
-      body {
-        background: linear-gradient(120deg, #2c3750, #34db5e);
-        color: white;
-        overflow-x: hidden;
-      }
-
-      header {
-        text-align: center;
-        padding: 70px 20px;
-        animation: fadeIn 2s ease;
-      }
-
-      header h1 {
-        font-size: 2.5rem;
-        letter-spacing: 1px;
-      }
-
-      header p {
-        margin-top: 10px;
-        font-size: 1.1rem;
-        opacity: 0.8;
-      }
-
-      section {
-        max-width: 900px;
-        margin: 40px auto;
-        background: rgba(255, 255, 255, 0.1);
-        border-radius: 20px;
-        padding: 30px;
-        backdrop-filter: blur(6px);
-        box-shadow: 0 4px 20px rgba(0, 0, 0, 0.3);
-        animation: slideUp 1s ease;
-        transition: transform 0.3s ease;
-      }
-
-      section:hover {
-        transform: translateY(-5px);
-      }
-
-      h2 {
-        font-size: 1.8rem;
-        color: #f1c40f;
-        margin-bottom: 10px;
-      }
-
-      p {
-        font-size: 1rem;
-        line-height: 1.7;
-        margin-bottom: 20px;
-        text-align: justify;
-      }
-
-      footer {
-        text-align: center;
-        padding: 20px;
-        font-size: 0.9rem;
-        opacity: 0.7;
-      }
-
-      .btn {
-        display: inline-block;
-        background: #f1c40f;
-        color: #2c3e50;
-        padding: 10px 20px;
-        border-radius: 10px;
-        text-decoration: none;
-        font-weight: bold;
-        transition: 0.3s ease;
-        cursor: pointer;
-        margin: 5px;
-      }
-
-      .btn:hover {
-        background: #fff;
-        transform: scale(1.05);
-      }
-
-      @keyframes fadeIn {
-        from {
-          opacity: 0;
-          transform: translateY(-20px);
+        :root {
+            --primary: #2ecc71;
+            --secondary: #f1c40f;
+            --dark: #1a2a3a;
+            --light: #ffffff;
         }
-        to {
-          opacity: 1;
-          transform: translateY(0);
-        }
-      }
 
-      @keyframes slideUp {
-        from {
-          opacity: 0;
-          transform: translateY(50px);
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+            font-family: 'Poppins', sans-serif;
         }
-        to {
-          opacity: 1;
-          transform: translateY(0);
-        }
-      }
 
-      #tafsir-box {
-        display: none;
-        background: rgba(255, 255, 255, 0.2);
-        border-radius: 10px;
-        padding: 20px;
-        margin-top: 20px;
-        animation: fadeIn 0.5s ease;
-      }
+        body {
+            background: linear-gradient(135deg, #1a2a3a 0%, #2ecc71 100%);
+            color: var(--light);
+            line-height: 1.6;
+            min-height: 100vh;
+        }
+
+        header {
+            text-align: center;
+            padding: 100px 20px 50px;
+            background: rgba(0,0,0,0.2);
+            clip-path: polygon(0 0, 100% 0, 100% 85%, 0% 100%);
+        }
+
+        header h1 {
+            font-size: 3rem;
+            margin-bottom: 10px;
+            text-shadow: 2px 2px 10px rgba(0,0,0,0.3);
+        }
+
+        .container {
+            max-width: 900px;
+            margin: -50px auto 50px;
+            padding: 20px;
+        }
+
+        section {
+            background: rgba(255, 255, 255, 0.1);
+            backdrop-filter: blur(15px);
+            border: 1px solid rgba(255, 255, 255, 0.2);
+            border-radius: 20px;
+            padding: 40px;
+            margin-bottom: 30px;
+            box-shadow: 0 15px 35px rgba(0,0,0,0.2);
+            transition: 0.3s;
+        }
+
+        section:hover {
+            transform: translateY(-5px);
+            background: rgba(255, 255, 255, 0.15);
+        }
+
+        h2 {
+            color: var(--secondary);
+            margin-bottom: 20px;
+            display: flex;
+            align-items: center;
+            gap: 10px;
+        }
+
+        .quran-container {
+            background: rgba(0, 0, 0, 0.2);
+            padding: 30px;
+            border-radius: 15px;
+            margin-bottom: 20px;
+            direction: rtl;
+        }
+
+        .ayat-item {
+            margin-bottom: 25px;
+            text-align: right;
+        }
+
+        .arabic {
+            font-family: 'Amiri', serif;
+            font-size: 2.2rem;
+            color: #ffffff;
+            display: block;
+            margin-bottom: 10px;
+        }
+
+        .translation {
+            font-family: 'Poppins', sans-serif;
+            font-size: 1rem;
+            color: #ddd;
+            direction: ltr;
+            text-align: left;
+            display: block;
+            margin-top: 5px;
+        }
+
+        p {
+            margin-bottom: 15px;
+            text-align: justify;
+        }
+
+        .highlight-box {
+            background: rgba(46, 204, 113, 0.2);
+            border-left: 4px solid var(--primary);
+            padding: 15px;
+            margin: 20px 0;
+            border-radius: 0 10px 10px 0;
+        }
+
+        .btn {
+            background: var(--secondary);
+            color: var(--dark);
+            padding: 12px 25px;
+            border: none;
+            border-radius: 50px;
+            font-weight: 700;
+            cursor: pointer;
+            transition: 0.3s;
+            text-transform: uppercase;
+            letter-spacing: 1px;
+            margin-top: 10px;
+        }
+
+        .btn:hover {
+            background: var(--light);
+            box-shadow: 0 5px 15px rgba(0,0,0,0.2);
+            transform: scale(1.05);
+        }
+
+        .quiz-container {
+            background: rgba(0,0,0,0.3);
+            padding: 25px;
+            border-radius: 15px;
+            margin-top: 20px;
+        }
+
+        .question {
+            font-weight: 600;
+            margin-bottom: 15px;
+            color: #fff;
+        }
+
+        .option {
+            background: rgba(255,255,255,0.1);
+            padding: 10px 15px;
+            margin-bottom: 10px;
+            border-radius: 8px;
+            cursor: pointer;
+            transition: 0.2s;
+        }
+
+        .option:hover {
+            background: rgba(255,255,255,0.2);
+        }
+
+        footer {
+            text-align: center;
+            padding: 40px;
+            font-size: 0.9rem;
+            opacity: 0.8;
+        }
+
+        @media (max-width: 768px) {
+            header h1 { font-size: 2rem; }
+            section { padding: 25px; }
+            .arabic { font-size: 1.8rem; }
+        }
     </style>
-  </head>
-  <body>
+</head>
+<body>
+
     <header>
-      <h1>Surat Al-Kafirun</h1>
-      <p style="text-align: center">
-        Menemukan makna toleransi dan ketegasan iman dalam Islam
-      </p>
+        <h1>Surat Al-Kafirun</h1>
+        <p style="text-align: center; width: 100%;">Kajian Moderasi Beragama untuk Mahasiswa UNIKAMA</p>
     </header>
 
-    <section>
-      <h2>🌙 Latar Belakang</h2>
-      <p>
-        Surat Al-Kafirun (QS. 109) diturunkan di Mekkah saat Nabi Muhammad ﷺ
-        menghadapi penolakan dari kaum Quraisy. Surat ini menegaskan bahwa Islam
-        menghormati perbedaan keyakinan, namun tidak mencampuradukkan akidah.
-      </p>
+    <div class="container">
+        
+        <section>
+            <h2>📖 Bacaan & Terjemahan</h2>
+            <div style="background: var(--secondary); color: var(--dark); display: inline-block; padding: 2px 12px; border-radius: 5px; font-weight: bold; margin-bottom: 15px;">
+                Surat Makkiyah (109)
+            </div>
+            <div class="quran-container">
+                <div class="ayat-item">
+                    <span class="arabic">قُلْ يَا أَيُّهَا الْكَافِرُونَ</span>
+                    <span class="translation">1. Katakanlah (Muhammad), "Wahai orang-orang kafir!</span>
+                </div>
+                <div class="ayat-item">
+                    <span class="arabic">لَا أَعْبُدُ مَا تَعْبُدُونَ</span>
+                    <span class="translation">2. Aku tidak akan menyembah apa yang kamu sembah,</span>
+                </div>
+                <div class="ayat-item">
+                    <span class="arabic">وَلَا أَنْتُمْ عَابِدُونَ مَا أَعْبُدُ</span>
+                    <span class="translation">3. dan kamu bukan penyembah apa yang aku sembah,</span>
+                </div>
+                <div class="ayat-item">
+                    <span class="arabic">وَلَا أَنَا عَابِدٌ مَا عَبَدْتُمْ</span>
+                    <span class="translation">4. dan aku tidak pernah menjadi penyembah apa yang kamu sembah,</span>
+                </div>
+                <div class="ayat-item">
+                    <span class="arabic">وَلَا أَنْتُمْ عَابِدُونَ مَا أَعْبُدُ</span>
+                    <span class="translation">5. dan kamu tidak pernah (pula) menjadi penyembah apa yang aku sembah.</span>
+                </div>
+                <div class="ayat-item">
+                    <span class="arabic">لَكُمْ دِينُكُمْ وَلِيَ دِينِ</span>
+                    <span class="translation">6. Untukmu agamamu, dan untukku agamaku."</span>
+                </div>
+            </div>
+        </section>
 
-      <h2>📖 Pesan Utama</h2>
-      <p>
-        “Untukmu agamamu, dan untukku agamaku.” (QS. Al-Kafirun: 6) Ayat ini
-        sering ditafsirkan sebagai pesan <b>toleransi beragama</b>. Namun,
-        sebagian ulama juga menekankan <b>ketegasan iman</b> agar tidak ikut dalam
-        praktik kepercayaan lain.
-      </p>
+        <section>
+            <h2>🌙 Mengenal Al-Kafirun & Konteks Turunnya</h2>
+            <p>
+                Surat Al-Kafirun adalah surat ke-109 dalam Al-Qur'an dan tergolong sebagai <b>Surat Makkiyah</b> (turun di Mekkah sebelum hijrah). Surat ini memiliki nama lain <i>Al-Ikhlas</i> (karena memurnikan ibadah) atau <i>Al-Muqasyqasyah</i> (penyembuh/pembebas dari kemunafikan dan kesyirikan).
+            </p>
+            <div class="highlight-box">
+                <b>Peristiwa Turunnya (Asbabun Nuzul):</b><br>
+                Surat ini turun sebagai jawaban tegas terhadap tawaran tokoh-tokoh Quraisy (seperti Walid bin Mughirah dan Al-Aas bin Wa'il). Mereka mengajak Nabi Muhammad ﷺ untuk melakukan <b>kompromi agama</b>: Nabi menyembah berhala mereka selama setahun, dan mereka akan menyembah Allah selama setahun berikutnya. Allah menurunkan surat ini untuk menegaskan bahwa aqidah tidak boleh dipertukarkan.
+            </div>
+        </section>
 
-      <h2>🎧 Dengarkan Lantunan Surat Al-Kafirun</h2>
-      <button class="btn" onclick="toggleAudio()">
-        Putar / Hentikan Lantunan
-      </button>
-      <audio id="audio" src="alkafirun.mp3.mp3"></audio>
+        <section>
+            <h2>🕋 Moderasi Beragama di Kampus</h2>
+            <p>Bagi mahasiswa <b>UNIKAMA</b> yang hidup di lingkungan beragam, Al-Kafirun memberikan fondasi moderasi yang kokoh:</p>
+            
+            <ul style="margin-left: 20px; margin-bottom: 20px;">
+                <li><b>Tegas dalam Iman (Eksklusivisme Teologis):</b> Kita meyakini kebenaran agama kita tanpa harus menghina keyakinan orang lain. Pengulangan ayat 3 dan 5 adalah <i>Taukid</i> (penegasan) agar kita tidak goyah oleh pengaruh sinkretisme (pencampuradukan agama).</li>
+                <li><b>Luas dalam Pergaulan (Inklusivisme Sosial):</b> Ayat 6 "Lakum Diinukum" adalah proklamasi perdamaian. Kita memberikan hak penuh kepada penganut agama lain untuk beribadah, sementara kita tetap menjalankan kewajiban kita. Inilah inti dari moderasi: <b>toleransi tanpa kompromi aqidah.</b></li>
+            </ul>
 
-      <h2>🕋 Tafsir Ulama</h2>
-      <button class="btn" onclick="toggleTafsir()">
-        Tampilkan / Sembunyikan Tafsir
-      </button>
-      <div id="tafsir-box">
-        <p>
-          <strong>Quraish Shihab (Tafsir Al-Misbah):</strong> Surat ini bukan
-          ajakan permusuhan, tapi penegasan batas keyakinan dengan cara damai.
-        </p>
-        <p>
-          <strong>Ibn Katsir:</strong> Allah memerintahkan Nabi untuk tidak
-          mengikuti cara ibadah kaum kafir, namun tetap menunjukkan akhlak baik.
-        </p>
-        <p>
-          <strong>Kemenag RI:</strong> Surat ini menunjukkan sikap moderat:
-          menghormati perbedaan, tanpa kehilangan prinsip iman.
-        </p>
-      </div>
+            <button class="btn" onclick="toggleTafsir()">Buka Analisis Ulama</button>
+            
+            <div id="tafsir-box" style="display:none; margin-top: 20px; padding: 20px; background: rgba(0,0,0,0.2); border-radius: 10px;">
+                <p><b>Prof. Quraish Shihab:</b> Menekankan bahwa kata "Kafirun" di sini merujuk pada sekelompok orang tertentu yang mengajak Nabi berkompromi, namun pesannya berlaku umum untuk menjaga identitas muslim.</p>
+                <p><b>Buya Hamka:</b> Menjelaskan dalam Tafsir Al-Azhar bahwa Islam tidak mengenal paksaan. Kita tidak mengganggu mereka, tapi kita juga tidak akan pernah mengikuti cara ibadah mereka.</p>
+            </div>
+        </section>
 
-      <h2>⚖️ Nilai Moderasi</h2>
-      <p>
-        Islam mengajarkan keseimbangan: beriman dengan teguh, namun tetap
-        menghormati orang lain. Perbedaan tafsir menunjukkan bahwa Islam adalah
-        agama yang terbuka terhadap diskusi dan pemahaman yang beragam.
-      </p>
-    </section>
+        <section style="text-align: center;">
+            <h2>🎧 Audio Murottal</h2>
+            <audio id="audio" src="alkafirun.mp3"></audio>
+            <button class="btn" onclick="toggleAudio()">⏯ Play / Pause</button>
+        </section>
+
+        <section id="quiz" style="text-align: center;">
+            <h2>📝 Quiz Pemahaman Materi</h2>
+            <p id="quiz-instruction">Seberapa paham Anda dengan materi di atas? Coba jawab 5 soal berikut.</p>
+            
+            <button class="btn" id="start-btn" onclick="startQuiz()">Mulai Quiz</button>
+
+            <div id="quiz-display" style="display:none; text-align: left; margin-top: 20px;">
+                <div class="quiz-container">
+                    <div id="quiz-content">
+                        <p class="question" id="q-text"></p>
+                        <div id="options-area"></div>
+                    </div>
+                </div>
+            </div>
+
+            <div id="score-result" style="display:none; margin-top: 20px; padding: 20px; background: white; color: #1a2a3a; border-radius: 15px;">
+                <h3 id="final-score-text"></h3>
+                <h1 id="final-grade" style="font-size: 4rem; margin: 10px 0;"></h1>
+                <p id="grade-desc"></p>
+                <button class="btn" onclick="location.reload()">Ulangi Quiz</button>
+            </div>
+        </section>
+
+        <section style="background: rgba(241, 196, 15, 0.2); border: 2px solid var(--secondary);">
+            <h2>📊 Kontribusi Kuesioner</h2>
+            <p>Bantu saya dalam pemetaan data sikap mahasiswa UNIKAMA melalui Google Form di bawah ini.</p>
+            <center>
+                <a href="ISI_LINK_GFORM_KAMU_DISINI" target="_blank" class="btn" style="background: var(--light); color: var(--dark);">Buka Google Form</a>
+            </center>
+        </section>
+    </div>
 
     <footer>
-      <p style="text-align: center;">© 2025 - Website PjBL Surat Al-Kafirun | Dibuat oleh Fandi Eka Pratama</p>
+        <p>© 2026 UTS PAI - Fandi Eka Pratama (NIM: 250403010024)<br>Universitas PGRI Kanjuruhan Malang</p>
     </footer>
 
     <script>
-      const audio = document.getElementById("audio");
-      function toggleAudio() {
-        if (audio.paused) {
-          audio.play();
-        } else {
-          audio.pause();
+        const audio = document.getElementById("audio");
+        function toggleAudio() {
+            return audio.paused ? audio.play() : audio.pause();
         }
-      }
 
-      function toggleTafsir() {
-        const box = document.getElementById("tafsir-box");
-        box.style.display =
-          box.style.display === "none" || box.style.display === ""
-            ? "block"
-            : "none";
-      }
+        function toggleTafsir() {
+            const box = document.getElementById("tafsir-box");
+            box.style.display = box.style.display === "none" ? "block" : "none";
+        }
+
+        // Quiz Logic yang disesuaikan dengan materi website
+        const myQuestions = [
+            { 
+                q: "Termasuk golongan apakah Surat Al-Kafirun?", 
+                a: ["Madaniyah (Turun di Madinah)", "Makkiyah (Turun di Mekkah)", "Misriyah (Turun di Mesir)"], 
+                c: 1 
+            },
+            { 
+                q: "Apa peristiwa utama yang menyebabkan turunnya surat ini (Asbabun Nuzul)?", 
+                a: ["Perang Badar", "Tawaran Quraisy untuk bertukar sesembahan", "Kemenangan umat Islam"], 
+                c: 1 
+            },
+            { 
+                q: "Menurut materi di atas, apa fungsi pengulangan pada ayat 3 dan 5?", 
+                a: ["Memperindah sajak", "Sebagai penegasan (Taukid) agar tidak sinkretis", "Menunjukkan durasi waktu"], 
+                c: 1 
+            },
+            { 
+                q: "Bagaimana sikap moderasi yang benar sesuai ayat ke-6 menurut kajian ini?", 
+                a: ["Ikut merayakan ritual agama lain", "Menghargai hak ibadah orang lain tanpa kompromi aqidah", "Menjauhi teman yang berbeda agama"], 
+                c: 1 
+            },
+            { 
+                q: "Apa nama lain surat Al-Kafirun yang berarti pembebas dari kemunafikan?", 
+                a: ["Al-Fatihah", "Al-Muqasyqasyah", "Al-Baqarah"], 
+                c: 1 
+            }
+        ];
+
+        let currentQ = 0;
+        let score = 0;
+
+        function startQuiz() {
+            document.getElementById('start-btn').style.display = 'none';
+            document.getElementById('quiz-instruction').style.display = 'none';
+            document.getElementById('quiz-display').style.display = 'block';
+            loadQuestion();
+        }
+
+        function loadQuestion() {
+            const q = myQuestions[currentQ];
+            document.getElementById('q-text').innerText = (currentQ + 1) + ". " + q.q;
+            const optionsArea = document.getElementById('options-area');
+            optionsArea.innerHTML = "";
+            
+            q.a.forEach((opt, index) => {
+                const div = document.createElement('div');
+                div.className = 'option';
+                div.innerText = opt;
+                div.onclick = function() { checkAnswer(index); };
+                optionsArea.appendChild(div);
+            });
+        }
+
+        function checkAnswer(selected) {
+            if (selected === myQuestions[currentQ].c) {
+                score += 20;
+            }
+            currentQ++;
+            if (currentQ < myQuestions.length) {
+                loadQuestion();
+            } else {
+                finishQuiz();
+            }
+        }
+
+        function finishQuiz() {
+            document.getElementById('quiz-display').style.display = 'none';
+            const resultBox = document.getElementById('score-result');
+            resultBox.style.display = 'block';
+            
+            document.getElementById('final-score-text').innerText = "Skor Anda: " + score;
+            
+            let grade = "";
+            let desc = "";
+
+            if (score >= 90) { grade = "A"; desc = "Luar Biasa! Anda memahami materi Makkiyah dan moderasi dengan sempurna."; }
+            else if (score >= 80) { grade = "B"; desc = "Bagus! Anda memahami konteks turunnya surat dan makna toleransi."; }
+            else if (score >= 70) { grade = "C"; desc = "Cukup. Sepertinya Anda melewatkan bagian Asbabun Nuzul."; }
+            else { grade = "D"; desc = "Ayo baca lagi materinya! Pahami perbedaan Makkiyah dan konsep Taukid."; }
+
+            document.getElementById('final-grade').innerText = grade;
+            document.getElementById('grade-desc').innerText = desc;
+        }
     </script>
-  </body>
+</body>
 </html>
